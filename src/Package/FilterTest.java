@@ -2,6 +2,7 @@ package Package;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -22,9 +23,14 @@ public class FilterTest {
 		num.add(temp);
 		num.add(temp);
 
-		if (f.TurnToKML(num, "Table.csv") == 0) {
-		} else
-			fail("there is problem with the method ChekFilterForKml");
+		try {
+			if (f.ChekFilterForKml(num)== 0) {
+			} else
+				fail("there is problem with the method ChekFilterForKml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
