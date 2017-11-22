@@ -1,6 +1,10 @@
-//אובייקט שמכיל כל שורה בקובץ שמתקבל מהאפליקציה
+package Package;
+
 public class AllData {
-	private String id;
+	/**
+	 * the object contains all the Type of information we received from the app
+	 */
+	private String  id;
 	private String mac;
 	private String ssid;
 	private String mode;
@@ -13,6 +17,21 @@ public class AllData {
 	private String accuracyMeters;
 	private String type;
 
+	/**
+	 * constructor
+	 * @param id
+	 * @param mac
+	 * @param ssid
+	 * @param mode
+	 * @param time
+	 * @param channel
+	 * @param signal
+	 * @param lat
+	 * @param lon
+	 * @param alt
+	 * @param accuracyMeters
+	 * @param type
+	 */
 	public AllData(String id, String mac, String ssid, String mode, String time, String channel, String signal,
 			String lat, String lon, String alt, String accuracyMeters, String type) {
 		this.id = id;
@@ -28,7 +47,9 @@ public class AllData {
 		this.accuracyMeters = accuracyMeters;
 		this.type = type;
 	}
-
+/**
+ * empty constructor
+ */
 	public AllData() {
 		this.id = null;
 		this.mac = null;
@@ -43,7 +64,10 @@ public class AllData {
 		this.accuracyMeters = null;
 		this.type = null;
 	}
-
+/**
+ * copy constructor
+ * @param other
+ */
 	public AllData(AllData other) {
 		this.id = other.id;
 		this.mac = other.mac;
@@ -59,7 +83,9 @@ public class AllData {
 		this.type = other.type;
 
 	}
-
+/**
+ * toString
+ */
 	public String toString() {
 		return "AllData [mac=" + mac + ", ssid=" + ssid + ", mode=" + mode + ", time=" + time + ", channel=" + channel
 				+ ", signal=" + signal + ", lat=" + lat + ", lon=" + lon + ", alt=" + alt + ", accuracyMeters="
