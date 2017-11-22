@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Style id="red"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon></IconStyle></Style><Style id="yellow"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/yellow-dot.png</href></Icon></IconStyle></Style><Style id="green"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon></IconStyle></Style><Folder><name>Wifi Networks</name>
+
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:27]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c7:8c</td><td>5280</td><td>-92</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d8:ec</td><td>5180</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:da:18</td><td>2437</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:05:78</td><td>2437</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d0:3c</td><td>5300</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c8:1c</td><td>5240</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d8:e8</td><td>2437</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d0:38</td><td>2462</td><td>-76</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d3:7c</td><td>5180</td><td>-74</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d6:fc</td><td>5220</td><td>-73</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.206953711479414,32.10508316385999</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:32]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:ca:38</td><td>2462</td><td>-71</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d6:fc</td><td>5220</td><td>-67</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c8:1c</td><td>5240</td><td>-74</td></tr>
+<tr><td></td><td>f0:b0:52:be:c7:b7</td><td>5220</td><td>-79</td></tr>
+<tr><td></td><td>00:27:22:f3:e0:f6</td><td>2437</td><td>-81</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:05:38</td><td>2462</td><td>-82</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:1d:7c</td><td>5220</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.206975711308054,32.10509478765551</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:37]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:61:c8</td><td>2462</td><td>-90</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:14:38:2c</td><td>5180</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c7:8c</td><td>5280</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:cc:7c</td><td>5220</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:cc:78</td><td>2437</td><td>-83</td></tr>
+<tr><td></td><td>f0:b0:52:be:d4:57</td><td>5290</td><td>-76</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d4:5c</td><td>5290</td><td>-75</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:da:18</td><td>2437</td><td>-75</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d4:58</td><td>2412</td><td>-69</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c7:bc</td><td>5220</td><td>-63</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.20703745297369,32.10505902855257</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:42]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d0:38</td><td>2462</td><td>-62</td></tr>
+<tr><td></td><td>f0:b0:52:be:c7:b7</td><td>5220</td><td>-69</td></tr>
+<tr><td></td><td>1c:b9:c4:94:38:27</td><td>5180</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:61:cc</td><td>5200</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:44:5c</td><td>5220</td><td>-91</td></tr>
+</table><]]></description>
+<styleUrl>#green</styleUrl>
+<Point>
+<coordinates>35.207100178597784,32.105041066224445</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:47]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d6:f8</td><td>2437</td><td>-55</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:da:1c</td><td>5290</td><td>-81</td></tr>
+<tr><td></td><td>f0:b0:52:be:da:17</td><td>5290</td><td>-81</td></tr>
+<tr><td></td><td>f0:b0:52:be:d0:37</td><td>5300</td><td>-82</td></tr>
+<tr><td></td><td>f0:b0:52:be:d1:e7</td><td>5200</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d1:ec</td><td>5200</td><td>-84</td></tr>
+</table><]]></description>
+<styleUrl>#green</styleUrl>
+<Point>
+<coordinates>35.20712028033326,32.10501113357523</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:22:52]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d8:98</td><td>2412</td><td>-72</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:dc</td><td>5180</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:c8:58</td><td>2437</td><td>-80</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20712346711811,32.10496567598121</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:00]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d1:e8</td><td>2412</td><td>-63</td></tr>
+<tr><td></td><td>f0:b0:52:be:d6:f7</td><td>5220</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:14:2b:a8</td><td>2412</td><td>-81</td></tr>
+<tr><td>AUC_54_R</td><td>00:25:86:cc:00:f8</td><td>2432</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:fd:68</td><td>2462</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:26:d3:68</td><td>2412</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>f0:b0:52:3e:d0:98</td><td>2412</td><td>-87</td></tr>
+</table><]]></description>
+<styleUrl>#green</styleUrl>
+<Point>
+<coordinates>35.20713378962639,32.10487527324261</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:17]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:dc</td><td>5180</td><td>-75</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:fd:6c</td><td>5180</td><td>-90</td></tr>
+<tr><td></td><td>ec:8c:a2:88:aa:d7</td><td>5180</td><td>-77</td></tr>
+<tr><td></td><td>ec:8c:a2:88:95:87</td><td>5180</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:d8</td><td>2437</td><td>-82</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:95:88</td><td>2412</td><td>-82</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:95:8c</td><td>5180</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3d:78</td><td>2462</td><td>-83</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20711384035409,32.104667197518346</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:23]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:95:88</td><td>2412</td><td>-77</td></tr>
+<tr><td></td><td>1c:b9:c4:95:fd:67</td><td>5180</td><td>-88</td></tr>
+<tr><td></td><td>00:27:22:f3:e0:83</td><td>2412</td><td>-76</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:0e:b8</td><td>2462</td><td>-84</td></tr>
+<tr><td></td><td>00:27:22:f3:e0:7b</td><td>2412</td><td>-85</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20708594439569,32.104601404220055</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:29]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:d8</td><td>2437</td><td>-73</td></tr>
+<tr><td>DIRECT-80-HP DeskJet 3630 series</td><td>70:5a:0f:5c:b0:0b</td><td>2437</td><td>-84</td></tr>
+<tr><td>HUAWEI_Grace_A9A9</td><td>24:1f:a0:1d:48:fb</td><td>2437</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:14:38:28</td><td>2437</td><td>-84</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:cc:ac</td><td>5220</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:26:d3:c8</td><td>2412</td><td>-88</td></tr>
+<tr><td></td><td>00:27:22:f3:e1:f4</td><td>2462</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.207047294336306,32.10452867980712</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:35]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:dc</td><td>5180</td><td>-69</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:fd:68</td><td>2462</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:a2:4c</td><td>5180</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:a2:48</td><td>2437</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:cc:a8</td><td>2462</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:41:f8</td><td>2412</td><td>-87</td></tr>
+</table><]]></description>
+<styleUrl>#green</styleUrl>
+<Point>
+<coordinates>35.207005361195215,32.1044482779125</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:40]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:dc</td><td>5180</td><td>-61</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:aa:d8</td><td>2437</td><td>-63</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:95:8c</td><td>5180</td><td>-75</td></tr>
+<tr><td>BezeqFree</td><td>06:ae:db:53:3f:a5</td><td>2437</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1f:58</td><td>2462</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>24:c9:a1:35:aa:b8</td><td>2417</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:36:78</td><td>2412</td><td>-91</td></tr>
+</table><]]></description>
+<styleUrl>#green</styleUrl>
+<Point>
+<coordinates>35.20698418865288,32.104390391989114</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:23:47]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:95:88</td><td>2412</td><td>-72</td></tr>
+<tr><td></td><td>ec:8c:a2:88:95:87</td><td>5180</td><td>-74</td></tr>
+<tr><td>iPhone</td><td>3a:f6:43:38:40:7f</td><td>2437</td><td>-78</td></tr>
+<tr><td></td><td>ec:8c:a2:88:a2:47</td><td>5180</td><td>-88</td></tr>
+<tr><td>KCG_54</td><td>00:25:86:cc:07:b2</td><td>2417</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1f:5c</td><td>5220</td><td>-90</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:28:88</td><td>2462</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.2069905322758,32.10429323592205</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:26:29]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>dina</td><td>a0:ab:1b:58:2c:06</td><td>2437</td><td>-92</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:a9:38</td><td>2437</td><td>-91</td></tr>
+<tr><td>Moria</td><td>d8:fe:e3:03:5a:31</td><td>2437</td><td>-91</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:78:3c</td><td>5200</td><td>-89</td></tr>
+<tr><td>Knoch</td><td>b0:48:7a:a1:80:8c</td><td>2427</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:09:8c:3c</td><td>5220</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:7a:1c</td><td>5180</td><td>-88</td></tr>
+<tr><td>HOTBOX-C8A5</td><td>d4:7b:b0:79:c8:ab</td><td>2437</td><td>-88</td></tr>
+<tr><td>Lidor a</td><td>a0:4f:d4:3b:e9:01</td><td>2437</td><td>-88</td></tr>
+<tr><td>YanivIsGay</td><td>c0:ac:54:f5:ff:4b</td><td>2462</td><td>-87</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.20813300940867,32.10338398838218</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:26:35]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Biren2809</td><td>14:ae:db:cf:86:f5</td><td>2462</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:f1:98</td><td>2462</td><td>-84</td></tr>
+<tr><td>norden</td><td>90:8d:78:55:1d:16</td><td>2412</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:09:0c:c8</td><td>2412</td><td>-81</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20820142581524,32.103382365215595</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:26:42]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>natali</td><td>d0:0f:6d:c0:fe:7f</td><td>2452</td><td>-88</td></tr>
+<tr><td>Yan</td><td>00:21:04:4c:2a:a2</td><td>2437</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:f4:78</td><td>2412</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:12:7c:c8</td><td>2462</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>ec:8c:a2:08:94:18</td><td>2412</td><td>-88</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20833910673961,32.10336422449943</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:30:07]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:12:af:78</td><td>2462</td><td>-91</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1e:6c</td><td>5180</td><td>-91</td></tr>
+<tr><td>yosh</td><td>00:11:6b:11:02:b7</td><td>2412</td><td>-91</td></tr>
+<tr><td></td><td>1c:b9:c4:95:3a:37</td><td>5220</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3a:3c</td><td>5220</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:14:2c:38</td><td>2437</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3d:68</td><td>2437</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3a:38</td><td>2462</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1e:68</td><td>2412</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:ee:98</td><td>2437</td><td>-85</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.2099970677917,32.102311484363014</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:30:11]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>DIRECT-61-HP DeskJet 3630 series</td><td>30:e1:71:0d:e0:63</td><td>2437</td><td>-92</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:14:30:38</td><td>2412</td><td>-90</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1c:b8</td><td>2412</td><td>-90</td></tr>
+<tr><td></td><td>1c:b9:c4:95:1e:67</td><td>5180</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3d:6c</td><td>5220</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1e:68</td><td>2412</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3d:68</td><td>2437</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:3a:38</td><td>2462</td><td>-78</td></tr>
+<tr><td>AUC</td><td>00:27:19:e8:ed:58</td><td>2452</td><td>-60</td></tr>
+<tr><td>AUC</td><td>00:27:19:e8:ed:58</td><td>2452</td><td>-60</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.20997838683377,32.102362968146316</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:33]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:e5:ac</td><td>5260</td><td>-88</td></tr>
+<tr><td>AUC</td><td>00:27:19:e8:ed:58</td><td>2452</td><td>-88</td></tr>
+<tr><td></td><td>1c:b9:c4:96:e5:a7</td><td>5260</td><td>-87</td></tr>
+<tr><td>IT-MNG</td><td>1c:b9:c4:15:ed:b8</td><td>2412</td><td>-86</td></tr>
+<tr><td>AUC_4_2_24</td><td>d8:5d:4c:9e:69:22</td><td>2412</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:e5:a8</td><td>2462</td><td>-86</td></tr>
+<tr><td>KCG-ADSL</td><td>00:1d:aa:81:d8:3c</td><td>2422</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:f1:58</td><td>2462</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:f1:5c</td><td>5220</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:fd:48</td><td>2412</td><td>-82</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.2097794756092,32.103431439524805</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:38]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>DIRECT-51-HP DeskJet 3630 series</td><td>3c:52:82:ef:d4:52</td><td>2437</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:ed:38</td><td>2437</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:fd:4c</td><td>5220</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:ed:3c</td><td>5220</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5c:18</td><td>2462</td><td>-92</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.2098249223319,32.10349108577987</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:43]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td></td><td>1c:b9:c4:96:06:b7</td><td>5180</td><td>-82</td></tr>
+<tr><td></td><td>1c:b9:c4:95:ed:b7</td><td>5240</td><td>-90</td></tr>
+<tr><td>IT-MNG</td><td>1c:b9:c4:15:ed:bc</td><td>5240</td><td>-90</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:ed:48</td><td>2437</td><td>-81</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:ed:38</td><td>2437</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:ed:4c</td><td>5180</td><td>-88</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1c:bc</td><td>5180</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20987770615676,32.10355885388331</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:48]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5c:18</td><td>2462</td><td>-87</td></tr>
+<tr><td>HelpDesk</td><td>60:e3:27:7b:e0:98</td><td>2427</td><td>-89</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:ed:3c</td><td>5220</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:bd:88</td><td>2462</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:1c:b8</td><td>2412</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:12:af:78</td><td>2462</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.20995221044469,32.10362848766915</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:52]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:1d:78</td><td>2462</td><td>-91</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:28:ec</td><td>5180</td><td>-90</td></tr>
+<tr><td></td><td>1c:b9:c4:95:fd:47</td><td>5220</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5b:dc</td><td>5180</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:07:b8</td><td>2462</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5b:d8</td><td>2412</td><td>-87</td></tr>
+<tr><td></td><td>8c:0c:90:6e:16:88</td><td>2447</td><td>-86</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:bd:8c</td><td>5220</td><td>-86</td></tr>
+<tr><td>Onicom</td><td>c0:4a:00:71:ee:ee</td><td>2452</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:12:af:78</td><td>2462</td><td>-84</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.209989594228276,32.10365507030123</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:31:57]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>DIRECT-51-HP DeskJet 3630 series</td><td>3c:52:82:ef:d4:52</td><td>2437</td><td>-78</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5b:d8</td><td>2412</td><td>-82</td></tr>
+<tr><td></td><td>8c:0c:90:ae:16:83</td><td>2447</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5c:1c</td><td>5180</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:24:98</td><td>2412</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21006048728997,32.10369746272259</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:02]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5c:18</td><td>2462</td><td>-76</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:bd:88</td><td>2462</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:07:b8</td><td>2462</td><td>-78</td></tr>
+<tr><td></td><td>00:27:22:f3:bb:2b</td><td>2437</td><td>-83</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:1d:7c</td><td>5220</td><td>-87</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:e8:f8</td><td>2412</td><td>-88</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21010896421857,32.10372918548215</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:07]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:5c:1c</td><td>5180</td><td>-77</td></tr>
+<tr><td>HelpDesk</td><td>60:e3:27:7b:e0:98</td><td>2427</td><td>-82</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:07:bc</td><td>5180</td><td>-85</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.210208321643925,32.10381573084736</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:12]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>8c:0c:90:2e:e8:18</td><td>2437</td><td>-80</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:61:68</td><td>2437</td><td>-89</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21025295135812,32.10384797467241</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:17]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td></td><td>1c:b9:c4:95:ed:37</td><td>5220</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>8c:0c:90:2d:34:38</td><td>2462</td><td>-85</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:41:78</td><td>2462</td><td>-88</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21030260037439,32.103888339040935</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:22]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:61:6c</td><td>5180</td><td>-90</td></tr>
+</table><]]></description>
+<styleUrl>#red</styleUrl>
+<Point>
+<coordinates>35.210386044988844,32.10392667597155</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:27]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:24:98</td><td>2412</td><td>-82</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:61:68</td><td>2437</td><td>-83</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.210496758752285,32.10396656417917</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:32]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:ed:38</td><td>2437</td><td>-74</td></tr>
+<tr><td>Ariel_University</td><td>8c:0c:90:2e:e8:18</td><td>2437</td><td>-73</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2c:61:68</td><td>2437</td><td>-78</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:24:9c</td><td>5180</td><td>-90</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21055626280469,32.103987227376116</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:37]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>8c:0c:90:2d:34:38</td><td>2462</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:15:ed:3c</td><td>5220</td><td>-79</td></tr>
+<tr><td>Ariel_University</td><td>24:79:2a:2b:24:9c</td><td>5180</td><td>-83</td></tr>
+<tr><td></td><td>24:79:2a:ab:24:97</td><td>5180</td><td>-83</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.21064444895631,32.104011520631225</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name><![CDATA[2017-11-08 19:32:42]]></name>
+<description><![CDATA[
+<br><table  border="1" style="font-size:12px;">
+<tr><td><b>Name</b></td>
+<td><b>Mac</b></td>
+<td><b>Frequency</b></td>
+<td><b>Signal</b></td>
+</tr>
+<tr><td>Ariel_University</td><td>1c:b9:c4:16:e8:f8</td><td>2412</td><td>-78</td></tr>
+<tr><td>Ariel_University</td><td>8c:0c:90:2f:d3:d8</td><td>2462</td><td>-87</td></tr>
+<tr><td>Bezeq-N_0777b8</td><td>c8:be:19:07:77:b9</td><td>2462</td><td>-88</td></tr>
+</table><]]></description>
+<styleUrl>#yellow</styleUrl>
+<Point>
+<coordinates>35.210722336081524,32.104035502798894</coordinates>
+</Point>
+</Placemark>
+</Folder></Document></kml>
