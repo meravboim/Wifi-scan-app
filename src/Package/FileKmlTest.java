@@ -1,5 +1,4 @@
 package Package;
-
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -42,14 +41,11 @@ public class FileKmlTest {
 	@Test
 	public void testReadFromCsvToKml() {
 		FileKml f = new FileKml();
-		try {
-			if (f.readFromCsvToKml("Table.csv") == 0) {
+		
+			if (f.readFromCsvToKml("Table.csv").size()>0) {
 			} else
 				fail("there is problem with the method ReadFromCsvToKml");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	
 	}
 
 	@Test
@@ -71,17 +67,12 @@ public class FileKmlTest {
 	}
 
 	@Test
-	public void testTurnTime() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testTurnToKML() {
 		FileKml f = new FileKml();
 		ArrayList<Scan> num = new ArrayList<Scan>();
 		ArrayList<WifiData> t = new ArrayList<WifiData>();
 		Cordinate cor = new Cordinate(32, 34, 21);
-		Scan temp = new Scan("28/10/2017  20:10:00", "ONEPLUS A3003_28_171012", cor, "4", t);
+		Scan temp = new Scan("28/10/2017  20:10:00", "ONEPLUS A3003_28_171012", cor,  t);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);

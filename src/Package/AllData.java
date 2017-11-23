@@ -1,5 +1,5 @@
+//אובייקט שמכיל כל שורה בקובץ שמתקבל מהאפליקציה
 package Package;
-
 public class AllData {
 	/**
 	 * the object contains all the Type of information we received from the app

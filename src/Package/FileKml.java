@@ -1,5 +1,4 @@
 package Package;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -93,10 +92,16 @@ public class FileKml {
 	 * @param path
 	 * @throws IOException
 	 */
-	public int readFromCsvToKml(String path) throws IOException {
+	public ArrayList<Scan> readFromCsvToKml(String path)  {
 		ArrayList<Scan> arrayOfscan = new ArrayList<Scan>();
 		File f = new File(path);
-		FileInputStream fi = new FileInputStream(f);
+		FileInputStream fi=null;
+		try {
+			fi = new FileInputStream(f);
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		Scanner sc = new Scanner(fi);
 		String str = sc.nextLine();
 		String[] data1 = str.split(",");
@@ -114,7 +119,7 @@ public class FileKml {
 				}
 				Cordinate cord = new Cordinate(Double.parseDouble(data[2]), Double.parseDouble(data[3]),
 						Double.parseDouble(data[4]));
-				Scan temp = new Scan(data[0], data[1], cord, data[5], dataw);
+				Scan temp = new Scan(data[0], data[1], cord,  dataw);
 				arrayOfscan.add(temp);
 			} catch (Exception e) {
 				// TODO: handle exception
@@ -122,10 +127,16 @@ public class FileKml {
 			}
 		}
 		sc.close();
-		fi.close();
+		try {
+			fi.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Filter fe = new Filter();
-		fe.ChekFilterForKml(arrayOfscan);
-		return 0;
+		
+			fe.ChekFilterForKml(arrayOfscan);
+		return arrayOfscan;
 	}
 
 	/**
@@ -141,13 +152,18 @@ public class FileKml {
 		Document doc = kml.createAndSetDocument();
 		for (int i = 0; i < arrayOfscan.size(); i++) {
 			for (int j = 0; j < arrayOfscan.get(i).getWifi().size(); j++) {
-				doc.createAndAddPlacemark().withName(arrayOfscan.get(i).getWifi().get(j).getSSID())
-						.withTimePrimitive(turnTime(arrayOfscan.get(i).getTime()))
-						.withDescription("Wifi num: " + j + " Mac: " + arrayOfscan.get(i).getWifi().get(j).getMAC()
-								+ " Frequency: " + arrayOfscan.get(i).getWifi().get(j).getFrequncy() + " Signal: "
-								+ arrayOfscan.get(i).getWifi().get(j).getSignal())
-						.createAndSetPoint().addToCoordinates(arrayOfscan.get(i).getCore().getLat(),
-								arrayOfscan.get(i).getCore().getLon(), arrayOfscan.get(i).getCore().getAlt());
+				try {
+					doc.createAndAddPlacemark().withName(arrayOfscan.get(i).getWifi().get(j).getSSID())
+					.withTimePrimitive(turnTime(arrayOfscan.get(i).getTime()))
+					.withDescription("Wifi num: " + j + " Mac: " + arrayOfscan.get(i).getWifi().get(j).getMAC()
+							+ " Frequency: " + arrayOfscan.get(i).getWifi().get(j).getFrequncy() + " Signal: "
+							+ arrayOfscan.get(i).getWifi().get(j).getSignal())
+					.createAndSetPoint().addToCoordinates(arrayOfscan.get(i).getCore().getLat(),
+							arrayOfscan.get(i).getCore().getLon(), arrayOfscan.get(i).getCore().getAlt());
+				}
+				catch (Exception e) {
+					// TODO: handle exception
+				}
 			}
 		}
 		try {
@@ -226,6 +242,18 @@ public class FileKml {
 		else
 			time += Date[2] + "-" + Date[1] + "-" + Date[0] + " " + Time[1];
 		return time;
+	}
+	public static boolean checkinput(String input, String format) {
+		if (format.equals("dd/mm/yyyy")) {
+			if ((input.length() == 10) && (input.charAt(2) == '/') && (input.charAt(5) == '/'))
+				return true;
+		}
+
+		if (format.equals("hh:mm:ss")) {
+			if ((input.length() == 8) && (input.charAt(2) == ':') && (input.charAt(5) == ':'))
+				return true;
+		}
+		return false;
 	}
 
 }

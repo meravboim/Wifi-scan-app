@@ -1,5 +1,4 @@
 package Package;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,13 +7,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Reader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 import javax.sound.midi.Synthesizer;
+
 
 import org.hamcrest.CoreMatchers;
 
@@ -76,9 +78,10 @@ public class FileCsv {
 	 * https://stackoverflow.com/questions/5694385/getting-the-filenames-of-all-files-in-a-folder
 	 * 
 	 * @param path
+	 * @throws  
 	 * @throws IOException
 	 */
-	public int readForCsv(String path) throws IOException {
+	public ArrayList<AllData> readForCsv(String path)   {
 		ArrayList<AllData> table = new ArrayList<AllData>();
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
@@ -86,7 +89,13 @@ public class FileCsv {
 			if (listOfFiles[i].isFile() && listOfFiles[i].getName().contains("csv")) {
 				System.out.println("File " + listOfFiles[i].getName() + " was read");
 				File f = new File(listOfFiles[i].getPath());
-				BufferedReader reader = new BufferedReader(new FileReader(listOfFiles[i].getPath()));
+				BufferedReader reader=null;
+				try {
+					reader = new BufferedReader(new FileReader(listOfFiles[i].getPath()));
+				} catch (FileNotFoundException e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
 				int lines = 0;
 				try {
 					while (reader.readLine() != null) {
@@ -96,9 +105,14 @@ public class FileCsv {
 				} catch (Exception e) {
 					// TODO: handle exception
 					System.out.println("there is a problme with the line: " + lines);
-					
 				}
-				FileInputStream fi = new FileInputStream(f);
+				FileInputStream fi=null;
+				try {
+					fi = new FileInputStream(f);
+				} catch (FileNotFoundException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				Scanner sc = new Scanner(fi);
 				String str = sc.nextLine();
 				String[] data1 = str.split(",");
@@ -117,19 +131,23 @@ public class FileCsv {
 						} catch (Exception e) {
 							// TODO: handle exception
 							System.out.println("there is a problem with the line: " + str);
-							
 						}
 					}
 
 				}
 				sc.close();
-				fi.close();
+				try {
+					fi.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 
 			}
 		}
-		sotrByScan(table);
-		return 0;	
-
+		
+			sotrByScan(table);
+return table;
 	}
 
 	/**
@@ -154,7 +172,7 @@ public class FileCsv {
 	 * @param table
 	 * @throws IOException
 	 */
-	public int sotrByScan(ArrayList<AllData> table) throws IOException {
+	public ArrayList<Scan> sotrByScan(ArrayList<AllData> table)  {
 		ArrayList<Scan> write = new ArrayList<Scan>();
 		String time = table.get(0).getTime();
 		String lon = table.get(0).getLon();
@@ -178,9 +196,13 @@ public class FileCsv {
 		}
 		end = table.size() - 1;
 		SortAndWrite(start, end, table, write);
-		writecsv(write, "Table.csv");
-		return 0;
-
+		try {
+			writecsv(write, "Table.csv");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+return write;
 	}
 
 	/**
@@ -191,7 +213,7 @@ public class FileCsv {
 	 * @param table
 	 * @param write
 	 */
-	public static int SortAndWrite(int start, int end, ArrayList<AllData> table, ArrayList<Scan> write) {
+	public static ArrayList<Scan> SortAndWrite(int start, int end, ArrayList<AllData> table, ArrayList<Scan> write) {
 		int[] index = IndexOfMaxRSSIWifi(start, end, table);
 		if (index[10] != 0) {
 			Scan temp = new Scan();
@@ -202,7 +224,7 @@ public class FileCsv {
 					cord = new Cordinate(Double.parseDouble(table.get(index[0]).getLon()),
 							Double.parseDouble(table.get(index[0]).getLat()),
 							Double.parseDouble(table.get(index[0]).getAlt()));
-					temp = new Scan(table.get(index[0]).getTime(), table.get(index[0]).getId(), cord, "" + index[10],
+					temp = new Scan(table.get(index[0]).getTime(), table.get(index[0]).getId(), cord,
 							wifi);
 
 				} catch (Exception e) {
@@ -211,8 +233,7 @@ public class FileCsv {
 			}
 			write.add(temp);
 		}
-		return 0;
-
+return write;
 	}
 
 	/**
@@ -317,18 +338,8 @@ public class FileCsv {
 		return false;
 
 	}
-
-	/**
-	 * the method write the data from the ArrayList write to a csv file
-	 * 
-	 * @param write
-	 * @param path
-	 * @throws IOException
-	 */
-
-	public int writecsv(ArrayList<Scan> write, String path) throws IOException {
-		String[] title = new String[46];
-		// äëðñú ëåúøåú ìîèøéöä
+	private static  Object[] headers() {
+		Object[] title = new String[46];
 		title[0] = "Time";
 		title[1] = "ID";
 		title[2] = "Lat";
@@ -345,32 +356,59 @@ public class FileCsv {
 			wifinum++;
 
 		}
+		return title;
+	}
 
-		FileWriter writer = new FileWriter(path);
-		PrintWriter outs = new PrintWriter(writer);
+	private static final Object [] header= headers();
+	private static final String new_line="\n";
 
-		for (int k = 0; k < title.length; k++) {
-			writer.append(title[k]);
-			writer.append(",");
-		}
-		outs.println();
-		for (int i = 0; i < write.size(); i++) {
-			writer.append(write.get(i).getTime() + "," + write.get(i).getId() + "," + ""
-					+ write.get(i).getCore().getLat() + "," + "" + write.get(i).getCore().getLon() + "," + ""
-					+ write.get(i).getCore().getAlt() + "," + write.get(i).getWifiNetWork() + ",");
-			ArrayList<WifiData> temp = write.get(i).getWifi();
-			for (int j = 0; j < temp.size(); j++) {
-				writer.append(temp.get(j).getSSID() + "," + temp.get(j).getMAC() + "," + temp.get(j).getFrequncy() + ","
-						+ temp.get(j).getSignal() + ",");
-
+		public static void writecsv (ArrayList<Scan> write, String path) throws IOException {
+			String[] title = new String[46];
+			// ����� ������ �������
+			title[0] = "Time";
+			title[1] = "ID";
+			title[2] = "Lat";
+			title[3] = "Lon";
+			title[4] = "Alt";
+			title[5] = "WiFi Networks";
+	
+			int wifinum = 1;
+			for (int j = 6; j < 46; j = j + 4) {
+				title[j] = "SSID" + wifinum;
+				title[j + 1] = "MAC" + wifinum;
+				title[j + 2] = "Frequncy" + wifinum;
+				title[j + 3] = "Signal" + wifinum;
+				wifinum++;
+	
+			}
+	
+			FileWriter writer = new FileWriter(path);
+			
+			//CSVPrinter csv = null; 
+			PrintWriter outs = new PrintWriter(writer);
+	
+			for (int k = 0; k < title.length; k++) {
+				writer.append(title[k]);
+				writer.append(",");
 			}
 			outs.println();
+			for (int i = 0; i < write.size(); i++) {
+				writer.append(write.get(i).getTime() + "," + write.get(i).getId() + "," + ""
+						+ write.get(i).getCore().getLat() + "," + "" + write.get(i).getCore().getLon() + "," + ""
+						+ write.get(i).getCore().getAlt() + "," + write.get(i).getWifiNetWork() + ",");
+				ArrayList<WifiData> temp = write.get(i).getWifi();
+				for (int j = 0; j < temp.size(); j++) {
+					writer.append(temp.get(j).getSSID() + "," + temp.get(j).getMAC() + "," + temp.get(j).getFrequncy() + ","
+							+ temp.get(j).getSignal() + ",");
+	
+				}
+				outs.println();
+			}
+	
+			writer.close();
+			System.out.println("csv create complete,please chek file.");
+	
 		}
-
-		writer.close();
-		System.out.println("csv create complete,please chek file.");
-return 0;
-	}
 	/**
 	 * The method find the minimal signal
 	 * @param start

@@ -1,72 +1,92 @@
 package Package;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 public class CordinateTest {
 
+	@Test
+	public void testCordinate() {
+		Cordinate core = new Cordinate();
+		if(core.getAlt()!=0 || core.getLat()!=0 || core.getLon()!=0)
+			fail("there is a problem with the  empty constractur");
+	}
 
 	@Test
-	public void testCordinatedoubledoubledouble() {
-		Cordinate temp= new Cordinate(45.00003,32.000505,34.66660);
-		if(temp.getLon()!= 45.00003||temp.getLat()!= 32.000505||temp.getAlt()!= 34.66660)
+	public void testCordinateDoubleDoubleDouble() {
+		Cordinate core = new Cordinate(1,2,3);
+		if(core.getLon()!=3 || core.getLat()!=2 || core.getAlt()!=3)
 			fail("there is a problem with the  constractur");
 	}
 
-
 	@Test
 	public void testCordinateCordinate() {
-		Cordinate o = new Cordinate(45.00003,32.000505,34.66660);
-		Cordinate temp = new Cordinate(o);
-		if(temp.getLon()!=o.getLon()|| temp.getLat()!=o.getLat()||temp.getAlt()!=o.getAlt())
-
+		Cordinate cord = new Cordinate(4,5,6);
+		Cordinate core = new Cordinate(cord);
+		if(core.getLon()!=4 || core.getLat()!=5 || core.getAlt()!=6)
 			fail("there is a problem with the copy constractur");
 	}
 
+
+
 	@Test
 	public void testGetLon() {
-		Cordinate temp= new Cordinate(45.00003,32.000505,34.66660);
-		if(temp.getLon()!= 45.00003)
-		fail("there is a problem with the method GetLon");
+		Cordinate cord = new Cordinate(4,5,6);
+		if(cord.getLon()!=4)
+			fail("there is a problem with the method GetLon");
 	}
 
 	@Test
 	public void testSetLon() {
-		Cordinate temp = new Cordinate();
-		temp.setLon( 45.00003);
-		if(temp.getLon()!= 45.00003)
-		fail("there is a problem with the method SetLon");
+		Cordinate cord = new Cordinate(4,5,6);
+		cord.setLon(7);
+		if(cord.getLon()!=7)
+			fail("there is a problem with the method SetLon");
 	}
 
 	@Test
 	public void testGetLat() {
-		Cordinate temp= new Cordinate(45.00003,32.000505,34.66660);
-		if(temp.getLat()!= 32.000505)
-		fail("there is a problem with the method GetLat");
+		Cordinate cord = new Cordinate(4,5,6);
+		if(cord.getLat()!=5)
+			fail("there is a problem with the method GetLat");
 	}
 
 	@Test
 	public void testSetLat() {
-		Cordinate temp = new Cordinate();
-		temp.setLat(32.000505);
-		if(temp.getLat()!= 32.000505)
-		fail("there is a problem with the method SetLat");
+		Cordinate cord = new Cordinate(4,5,6);
+		cord.setLat(8);
+		if(cord.getLat()!=8)
+			fail("there is a problem with the method SetLat");
 	}
 
 	@Test
 	public void testGetAlt() {
-		Cordinate temp= new Cordinate(45.00003,32.000505,34.66660);
-		if(temp.getAlt()!= 34.66660)
-		fail("there is a problem with the method GetAlt");
+		Cordinate cord = new Cordinate(4,5,6);
+		if(cord.getAlt()!=6)
+			fail("there is a problem with the method GetAlt");
 	}
 
 	@Test
 	public void testSetAlt() {
-		Cordinate temp = new Cordinate();
-		temp.setAlt(34.66660);
-		if(temp.getAlt()!= 34.66660)
-		fail("there is a problem with the method SetAlt");
+		Cordinate cord = new Cordinate(4,5,6);
+		cord.setAlt(9);
+		if(cord.getAlt()!=9)
+			fail("there is a problem with the method SetAlt");
+	}
+
+	@Test
+	public void testEqual() {
+		Cordinate cord = new Cordinate(4,5,6);
+		Cordinate core = new Cordinate(4,5,6);
+		if(!cord.equal(cord, core))
+			fail("there is a problem with the method equals");
+	}
+	@Test
+	public void testDistance() {
+		Cordinate	a= new Cordinate(3.4,5,9)	;
+		Cordinate	b= new Cordinate(8.4,9,9)	;
+		if (a.distance(a,b) != Math.sqrt(41))
+			fail("There is a broblem with the method Distance");
 	}
 
 

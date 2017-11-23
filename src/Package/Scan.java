@@ -1,20 +1,19 @@
 package Package;
-
 import java.util.ArrayList;
 
 public class Scan {
 	private String time;
 	private String id;
 	private Cordinate core;
-	private String wifiNetWork;
+	private int wifiNetWork;
     private ArrayList<WifiData> wifi= new ArrayList<WifiData>();
 
-	public Scan(String time, String id, Cordinate core, String wifiNetWork, ArrayList<WifiData> wifi) {
+	public Scan(String time, String id, Cordinate core, ArrayList<WifiData> wifi) {
 		this.time = time;
 		this.id = id;
 		this.core = core;
-		this.wifiNetWork = wifiNetWork;
 		this.wifi.addAll(wifi);
+		this.wifiNetWork =wifi.size() ;
 	}
 
 	public Scan(Scan other) {
@@ -29,7 +28,7 @@ public class Scan {
 		super();
 		this.time = null;
 		this.id = null;
-		this.wifiNetWork = null;
+		this.wifiNetWork = 0;
 		this.wifi.clear();
 		;
 	}
@@ -82,16 +81,8 @@ public class Scan {
 	/**
 	 * @return the wifiNetWork
 	 */
-	public String getWifiNetWork() {
+	public int getWifiNetWork() {
 		return wifiNetWork;
-	}
-
-	/**
-	 * @param wifiNetWork
-	 *            the wifiNetWork to set
-	 */
-	public void setWifiNetWork(String wifiNetWork) {
-		this.wifiNetWork = wifiNetWork;
 	}
 
 	/**
