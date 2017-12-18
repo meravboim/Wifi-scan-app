@@ -7,14 +7,14 @@ public class CordinateTest {
 	@Test
 	public void testCordinate() {
 		Cordinate core = new Cordinate();
-		if(core.getAlt()!=0 || core.getLat()!=0 || core.getLon()!=0)
+		if(core.getAlt()!=-1 || core.getLat()!=-1 || core.getLon()!=-1)
 			fail("there is a problem with the  empty constractur");
 	}
 
 	@Test
 	public void testCordinateDoubleDoubleDouble() {
 		Cordinate core = new Cordinate(1,2,3);
-		if(core.getLon()!=1 || core.getLat()!=2 || core.getAlt()!=3)
+		if(core.getLat()!=1 || core.getLon()!=2 || core.getAlt()!=3)
 			fail("there is a problem with the  constractur");
 	}
 
@@ -22,7 +22,7 @@ public class CordinateTest {
 	public void testCordinateCordinate() {
 		Cordinate cord = new Cordinate(4,5,6);
 		Cordinate core = new Cordinate(cord);
-		if(core.getLon()!=4 || core.getLat()!=5 || core.getAlt()!=6)
+		if(core.getLat()!=4 || core.getLon()!=5 || core.getAlt()!=6)
 			fail("there is a problem with the copy constractur");
 	}
 
@@ -31,7 +31,7 @@ public class CordinateTest {
 	@Test
 	public void testGetLon() {
 		Cordinate cord = new Cordinate(4,5,6);
-		if(cord.getLon()!=4)
+		if(cord.getLon()!=5)
 			fail("there is a problem with the method GetLon");
 	}
 
@@ -46,7 +46,7 @@ public class CordinateTest {
 	@Test
 	public void testGetLat() {
 		Cordinate cord = new Cordinate(4,5,6);
-		if(cord.getLat()!=5)
+		if(cord.getLat()!=4)
 			fail("there is a problem with the method GetLat");
 	}
 

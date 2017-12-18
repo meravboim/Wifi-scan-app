@@ -36,8 +36,9 @@ public class MacData  extends WifiData { //implements Comparator<MacData> {
 	}
 	
 	public MacData (MacData other) {
-		super();
+		super(other.getSSID(),other.getMAC(),other.getFrequncy(),other.getSignal());
 		this.time=other.time;
+		this.core=other.core;
 	}
 	/**
 	 * @return the time
@@ -51,6 +52,10 @@ public class MacData  extends WifiData { //implements Comparator<MacData> {
 	public void setTime(String time) {
 		this.time = stringToDate(time);
 	}
+	public void setTime(Date time) {
+		this.time = time;
+	}
+
 	/**
 	 * @return the core
 	 */

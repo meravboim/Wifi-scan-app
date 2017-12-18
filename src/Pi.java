@@ -20,7 +20,7 @@ public class Pi extends Cordinate  {
 	}
 
 	public Pi(Pi other) {
-		super(other.getLon(), other.getLat(),other.getAlt() );
+		super(other.getLat(), other.getLon(),other.getAlt() );
 		this.pi = other.pi;
 	
 	}

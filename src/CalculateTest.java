@@ -29,7 +29,6 @@ public class CalculateTest {
 		a.setSignal("-84");
 		Calculate k =new Calculate ();
 		Cordinate  l=new Cordinate(31.62694300518135,37.05958549222798,38.37305699481866);
-		System.out.println(Calculate.cor1(macs).toString());
 		if(!l.equal(l,Calculate.cor1(macs)) ){
 		fail("There is a broblem withthe method cor1");
 		}
@@ -37,12 +36,37 @@ public class CalculateTest {
 
 	@Test
 	public void testCor2() {
-		fail("Not yet implemented");
+		Cordinate core = new Cordinate(1,2,3);
+		Pi p = new Pi(core,0.5);
+		Pi p1 = new Pi(core,0.6);
+		Pi p2 = new Pi(core,0.7);
+		Pi p3 = new Pi(core,0.8);
+		Pi p4 = new Pi(core,0.9);
+		Pi p5 = new Pi(core,0.1);
+		Pi p6 = new Pi(core,0.2);
+		Pi p7 = new Pi(core,0.3);
+		ArrayList<Pi> temp=new ArrayList<Pi>();
+		temp.add(p);
+		temp.add(p1);
+		temp.add(p2);
+		temp.add(p3);
+		temp.add(p4);
+		temp.add(p5);
+		temp.add(p6);
+		temp.add(p7);
+		Cordinate c = Calculate.cor2(temp);
+		if(c.getLat()!=1||c.getLon()!=2||c.getAlt()!=3)
+			fail("There is a broblem withthe method cor2");
+		
+		
+		
 	}
 
 	@Test
 	public void testFindw() {
-		fail("Not yet implemented");
+		assertTrue(Calculate.findw("-120", "-70")==0.3536453281403808);
+		assertTrue(Calculate.findw("-80", "-70")==0.8124636133744843);
+		assertTrue(Calculate.findw("-30","-69")==0.48514993297198816);
 	}
 
 	@Test
