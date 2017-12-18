@@ -69,7 +69,7 @@ public class MacData  extends WifiData { //implements Comparator<MacData> {
 		this.core = core;
 	}
 	
-	public static Date stringToDate(String time)  {
+	public Date stringToDate(String time)  {
 		time=time.replace("-", "/");
 		time = CheckTime(time);
 		String day = "" + time.charAt(8) + time.charAt(9);
