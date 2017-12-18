@@ -71,14 +71,15 @@ public class FileKmlTest {
 		ArrayList<Scan> num = new ArrayList<Scan>();
 		ArrayList<WifiData> t = new ArrayList<WifiData>();
 		Cordinate cor = new Cordinate(32, 34, 21);
-		Scan temp = new Scan("28/10/2017 20:10:00", "ONEPLUS A3003_28_171012", cor,  t);
+		Scan temp = new Scan("28/10/2017  20:10:00", "ONEPLUS A3003_28_171012", cor,  t);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 
-		if (f.TurnToKML(num, "Table.csv") !=0)
+		if (f.TurnToKML(num, "Table.csv") == 0) {
+		} else
 			fail("there is problem with the method TurnToKML");
 
 		// TODO Auto-generated catch block

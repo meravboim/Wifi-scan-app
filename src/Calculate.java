@@ -5,9 +5,13 @@ public class Calculate extends Algoritem {
 	 * This class contains functions that calculate.
 	 */
 	private final static int norm=10000;
-	private final static int c1 = 3;
+	private final static int min_diff = 3;
 	private final static double f1_powrer = 0.4;
 	private final static double f2_powrer = 2.0;
+	private final static double no_signal = -120.0;
+	private final static double no_diff = 100.0;
+
+	
 	/**
 	 * that function calculate the approximation coordination to algo1 and return it. 
 	 * @param one
@@ -80,13 +84,13 @@ public class Calculate extends Algoritem {
 	 */
 	public static double findw(String signal1, String signal) {
 		double dif;
-		if (Double.parseDouble(signal1) != -120) {
+		if (Double.parseDouble(signal1) != no_signal) {
 			dif = Math.abs(Double.parseDouble(signal1) - Double.parseDouble(signal)) ;
-		if(dif<c1) 
-			dif=c1;
+		if(dif<min_diff) 
+			dif=min_diff;
 		}
 		else
-			dif = 80;
+			dif = no_diff;
 		double f1 = 1.0 / Math.pow(dif, f1_powrer);
 		double f2 = 1.0 / Math.pow(Double.parseDouble(signal), f2_powrer);
 		double result =norm* f1 * f2;

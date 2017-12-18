@@ -10,10 +10,17 @@ import java.util.List;
 import java.util.Map;
 
 public class Algoritem {
-
-	private final static int num = 4;
 /**
- * that method turn ArrayList of Scan to hash for algo1
+ * this class contains to algoritim for calculate approximate location,
+ *  algo 1 - calculate approximate location of one macs.
+ *  algo 2- calculate approximate location of one Scan.
+ *
+ */
+	private final static int num = 4;
+	private final static double no_signal = -120.0;
+
+/**
+ * that method turn ArrayList of Scan, Are DataBase, to hash for algo1
  * @param scan
  * @return
  */
@@ -40,7 +47,10 @@ public class Algoritem {
 	}
 	
 	
-
+/**
+ *  the method send one mac every time to the "algo1" and enter the cordinate to the object MacData, and finnly 
+ * @param scan
+ */
 	public void algo1tocsv(ArrayList<Scan> scan) {
 		Map<String, ArrayList<MacData>> find = algo1Hash(scan);
 		ArrayList<MacData> write = new ArrayList<MacData>();
@@ -60,7 +70,8 @@ public class Algoritem {
 		writetocsv(write, "C:\\Users\\yitzhak\\Desktop\\boaz\\test_algo1_BM123_map.csv");
 	}
 	/**
-	 * that function find the the approximation coordination to algo1
+	 * that function find the the approximation coordination to one mac, 
+	 * (the method get from the HashMap all the similar macs and find the approximation coordination)
 	 * @param find
 	 * @param mac
 	 * @return
@@ -106,7 +117,7 @@ public class Algoritem {
 	}
 	
 	/**
-	 * that method turn ArrayList of Scan to hash for algo1
+	 * that method turn ArrayList of Scan to hashMap for algo2
 	 * @param scan
 	 * @return
 	 */
@@ -141,7 +152,7 @@ public class Algoritem {
 		}
 		FileCsv fe = new FileCsv();
 		try {
-			fe.writecsv(sample, "C:\\Users\\yitzhak\\Desktop\\boaz\\test_for_algo_2_ts2.csv");
+			fe.writecsv(sample, "C:\\Users\\yitzhak\\Desktop\\boaz\\test_for_algo_2_ts2_solik.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -149,7 +160,7 @@ public class Algoritem {
 
 	}
 /**
- * the method  find the wanted macs on find.
+ * the method return the Approximate cordinate for each Scan.
  * @param find
  * @param sample
  * @return
@@ -211,7 +222,7 @@ public class Algoritem {
 		for (int i = 0; i < macs.size(); i++) {
 			double pi = 1;
 			for (int k = 0; k < sample.getWifi().size(); k++) {
-				String signal = "" + -120;
+				String signal = "" + no_signal;
 				for (int j = 0; j < macs.get(i).getWifi().size(); j++) {
 					if (macs.get(i).getWifi().get(j).getMAC().equals(approximation[0][k]))
 

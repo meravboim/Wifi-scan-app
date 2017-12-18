@@ -2,30 +2,38 @@ import java.util.Comparator;
 import java.util.Date;
 
 public class Pi extends Cordinate  {
-	private double pi;
-	/*
-	 * tostring
-	 * 
-	 * @see java.lang.Object#toString()
+	/**
+	 * this class contians Cordinate and double pi, we will this Object when we need to sort and take the 
+	 * bigges pi to send them to the Weighted average. 
 	 */
-
+	private double pi;
+/**
+ *  Constractor
+ * @param core
+ * @param pi
+ */
 	public Pi( Cordinate core ,double pi) {
 		super(core);
 		this.pi = pi;
 	}
-
+/**
+ * empty Constractor
+ */
 	public Pi() {
 		super();
 		this.pi = 0;
 	}
-
+/**
+ * copy Constractor 
+ * @param other
+ */
 	public Pi(Pi other) {
-		super(other.getLat(), other.getLon(),other.getAlt() );
+		super(other.getLon(), other.getLat(),other.getAlt() );
 		this.pi = other.pi;
 	
 	}
 
-	/* (non-Javadoc)
+	/* toString
 	 * 
 	 */
 	@Override
@@ -45,7 +53,9 @@ public class Pi extends Cordinate  {
 		this.pi = pi;
 	}
 
-
+/**
+ * Comparator, we will use the Comprator when we want to sort the ArrayList Pi, because we want the bigges Pi. 
+ */
     public static Comparator<Pi> sortbyPi = new Comparator<Pi>() {
 
 	public int compare(Pi s1, Pi s2) {

@@ -15,14 +15,15 @@ public class FilterTest {
 		ArrayList<Scan> num = new ArrayList<Scan>();
 		ArrayList<WifiData> t = new ArrayList<WifiData>();
 		Cordinate cor = new Cordinate(32, 34, 21);
-		Scan temp = new Scan("28/10/2017 20:10:00", "ONEPLUS A3003_28_171012", cor,  t);
+		Scan temp = new Scan("28/10/2017  20:10:00", "ONEPLUS A3003_28_171012", cor,  t);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
 
-			if (f.ChekFilterForKml(num) != 0) 
+			if (f.ChekFilterForKml(num) == 0) {
+			} else
 				fail("there is problem with the method ChekFilterForKml");
 	}
 	@Test

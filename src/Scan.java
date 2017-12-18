@@ -26,12 +26,12 @@ public class Scan {//implements Comparator<Scan> {
 	}
 
 	public Scan() {
-		super();
+		this.core= null;		
 		this.time = null;
 		this.id = null;
 		this.wifiNetWork = 0;
 		this.wifi.clear();
-		
+
 	}
 	/**
 	 * @return the time
@@ -111,70 +111,70 @@ public class Scan {//implements Comparator<Scan> {
 		return "Scan [time=" + time + ", id=" + id + ", core=" + core + ", wifiNetWork=" + wifiNetWork + ", wifi="
 				+ wifi + "]";
 	}
-	
-    public static Comparator<Scan> getCompByTime = new Comparator<Scan>() {
+
+	public static Comparator<Scan> getCompByTime = new Comparator<Scan>() {
 
 		public int compare(Scan a, Scan b) {
 			Date a1= stringToDate(a.getTime());
 			Date b1= stringToDate(b.getTime());
-		if(	a1.before(b1))	  
-			return 1;
-		else
-			return 0;
+			if(	a1.before(b1))	  
+				return 1;
+			else
+				return 0;
 
-    }};
+		}};
 
-	public static Date stringToDate(String time)  {
-		time=time.replace("-", "/");
-		time = CheckTime(time);
-		String day = "" + time.charAt(8) + time.charAt(9);
-		String year = "" + time.charAt(0) + time.charAt(1) + time.charAt(2) + time.charAt(3);
-		String month = "" + time.charAt(5) + time.charAt(6);
-		String hour, minute, second;
-		hour = "" + time.charAt(11) + time.charAt(12);
-		minute = "" + time.charAt(14) + time.charAt(15);
-		if (time.length() <= 16)
-			second = "00";
-		else
-			second = "" + time.charAt(17) + time.charAt(18);
+		public static Date stringToDate(String time)  {
+			time=time.replace("-", "/");
+			time = CheckTime(time);
+			String day = "" + time.charAt(8) + time.charAt(9);
+			String year = "" + time.charAt(0) + time.charAt(1) + time.charAt(2) + time.charAt(3);
+			String month = "" + time.charAt(5) + time.charAt(6);
+			String hour, minute, second;
+			hour = "" + time.charAt(11) + time.charAt(12);
+			minute = "" + time.charAt(14) + time.charAt(15);
+			if (time.length() <= 16)
+				second = "00";
+			else
+				second = "" + time.charAt(17) + time.charAt(18);
 
-		Date date=new Date();
-		date.setYear(Integer.parseInt(year));
-		date.setMonth(Integer.parseInt(month));
-		date.setDate(Integer.parseInt(day));
-		date.setHours(Integer.parseInt(hour));
-		date.setMinutes(Integer.parseInt(minute));
-		date.setSeconds(Integer.parseInt(second));
-		return date;
-	}
-
-	/**
-	 * check if the time is exhibit in American date format
-	 * 
-	 * @param time1
-	 * @return
-	 */
-
-	public static String CheckTime(String time1) {
-		String[] Time = time1.split(" ");
-		String time = "";
-		String[] Date = Time[0].split("/");
-		if (Date[0].length() == 4) {
-			time += Date[0] + "/" + Date[1] + "/" + Date[2] + " " + Time[1];
-			return time;
+			Date date=new Date();
+			date.setYear(Integer.parseInt(year));
+			date.setMonth(Integer.parseInt(month));
+			date.setDate(Integer.parseInt(day));
+			date.setHours(Integer.parseInt(hour));
+			date.setMinutes(Integer.parseInt(minute));
+			date.setSeconds(Integer.parseInt(second));
+			return date;
 		}
 
-		else
-			time += Date[2] + "/" + Date[1] + "/" + Date[0] + " " + Time[1];
-		return time;
-	}
-	public int equals (Scan other) {
-		if(this.getTime().equals(other.getTime()) && this.getId().equals(other.getId()) && this.core.equal(this.core, other.core)
-				&& this.getWifiNetWork() == other.getWifiNetWork() && this.wifi.equals(other.wifi))
-			return 1;
-		else return 0;
+		/**
+		 * check if the time is exhibit in American date format
+		 * 
+		 * @param time1
+		 * @return
+		 */
 
-	}
+		public static String CheckTime(String time1) {
+			String[] Time = time1.split(" ");
+			String time = "";
+			String[] Date = Time[0].split("/");
+			if (Date[0].length() == 4) {
+				time += Date[0] + "/" + Date[1] + "/" + Date[2] + " " + Time[1];
+				return time;
+			}
+
+			else
+				time += Date[2] + "/" + Date[1] + "/" + Date[0] + " " + Time[1];
+			return time;
+		}
+		public int equals (Scan other) {
+			if(this.getTime().equals(other.getTime()) && this.getId().equals(other.getId()) && this.core.equal(this.core, other.core)
+					&& this.getWifiNetWork() == other.getWifiNetWork() && this.wifi.equals(other.wifi))
+				return 1;
+			else return 0;
+
+		}
 
 
 }

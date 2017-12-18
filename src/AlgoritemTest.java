@@ -42,10 +42,9 @@ public class AlgoritemTest {
 		}
 		Algoritem k =new Algoritem();
 		Cordinate  l=new Cordinate(32.05623472,35.53545232,36.53545232);
-	if(k.algo1(find,"d4:6e:0e:3c:44:e1").equals(l))
-		fail("there is a problem with the method algo1");
+	
+		assertEquals(k.algo1(find,"d4:6e:0e:3c:44:e1"),l);
 	}
-		
 
 	@Test
 	public void testWritetocsv() {

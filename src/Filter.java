@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.function.Predicate;
 
+import org.junit.experimental.max.MaxCore;
 
 public class Filter extends FileKml {
 	/*
@@ -88,7 +89,8 @@ public class Filter extends FileKml {
 			Cordinate cord=new Cordinate();
 			cord.setLon(centerLon);
 			cord.setLat(centerLat);
-			fe.TurnToKML(oneMac(pe.filters(arryOfscan,pe.SelectByPlace(radus, cord))),"KmlByPlaceWithTimeLine.kml");
+			fe.TurnToKML(oneMac(pe.filters(arryOfscan,pe.SelectByPlace(radus, cord))),
+					"C:\\Users\\yitzhak\\eclipse-workspace\\OOP\\KmlByPlaceWithTimeLine.kml");
 
 		}
 		if (select == 3) {
