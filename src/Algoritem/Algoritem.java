@@ -8,8 +8,11 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 import object.*;
 import Files.*;
 
@@ -72,18 +75,7 @@ public class Algoritem {
 			}
 
 		}
-		writetocsv(write, "C:\\Users\\yitzhak\\Desktop\\boaz\\test_algo1_Table.csv");
-	}
-	public Cordinate algo1(Map<String, ArrayList<MacData>> find, String mac) {
-		ArrayList<MacData> one = find.get(mac);
-		Collections.sort(one, MacData.getCompBySignal);
-		ArrayList<MacData> onemac = new ArrayList<MacData>();
-		for (int i = one.size() - num; i < one.size(); i++) {
-			if (i >= 0)
-				onemac.add(one.get(i));
-		}
-		Cordinate cord = Calculate.cor1(onemac);
-		return cord;
+		writetocsv(write, "resutlt_algo1.csv");
 	}
 
 	/**
@@ -92,6 +84,18 @@ public class Algoritem {
 	 * @param find
 	 * @param mac
 	 * @returnemac.add(one.get(i));
+		}
+		Cordinate cord = Calculate.cor1(onemac);
+		return cord;
+	}**/
+	
+	public Cordinate algo1(Map<String, ArrayList<MacData>> find, String mac) {
+		ArrayList<MacData> one = find.get(mac);
+		Collections.sort(one, MacData.getCompBySignal);
+		ArrayList<MacData> onemac = new ArrayList<MacData>();
+		for (int i = one.size() - num; i < one.size(); i++) {
+			if (i >= 0)
+				onemac.add(one.get(i));
 		}
 		Cordinate cord = Calculate.cor1(onemac);
 		return cord;
@@ -123,36 +127,33 @@ public class Algoritem {
 		}
 
 	}
-	
-	/**
-	 * that method turn ArrayList of Scan to hashMap for algo2
-	 * @param scan
-	 * @return
-	 */
-
-	public Map<String, ArrayList<Scan>> hashalgo2(ArrayList<Scan> scan) {
-		Map<String, ArrayList<Scan>> find = new HashMap<String, ArrayList<Scan>>();
-		for (int i = 0; i < scan.size(); i++) {
-			for (int j = 0; j < scan.get(i).getWifi().size(); j++) {
-				if (find.containsKey(scan.get(i).getWifi().get(j).getMAC()))
-					find.get(scan.get(i).getWifi().get(j).getMAC()).add(scan.get(i));
-				else {
-					ArrayList<Scan> temp = new ArrayList<Scan>();
-					temp.add(scan.get(i));
-					find.put(scan.get(i).getWifi().get(j).getMAC(), temp);
-				}
-			}
-		}
-		return find;
+	public Cordinate algo2fromUser (Database d, String mac1, String mac2, String mac3, String signal_1, String signal_2, String signal_3) {
+		Set<WifiData> set =  new HashSet<WifiData>();
+		WifiData data1 = new WifiData(" ", mac1, " ",signal_1);
+		WifiData data2 = new WifiData (" ",mac2, " ", signal_2);
+		WifiData data3 = new WifiData(" ",mac3, " ",signal_3);
+		if(mac1!=null&&!mac1.isEmpty()&&signal_1!=null&&!signal_1.isEmpty())
+		set.add(data1);
+		if(mac2!=null&&!mac2.isEmpty()&&signal_2!=null&&!signal_2.isEmpty())
+		set.add(data2);
+		if(mac3!=null&&!mac3.isEmpty()&&signal_3!=null&&!signal_3.isEmpty())
+		set.add(data3);
+		ArrayList<WifiData> wifi = new ArrayList<WifiData>();
+		wifi.addAll(set);
+		Cordinate cor = new Cordinate();
+		Scan data = new Scan (" ", " ",cor,wifi);
+		cor = algo2(d.getHash_map(),data);
+		return cor;
 	}
+
 	/**
 	 *  the method get data and ArrayList of Scan with missing details, it complete them and write all to csv file.
 	 * @param scan
 	 * @param sample
 	 */
 
-	public void algo2tocsv(ArrayList<Scan> scan, ArrayList<Scan> sample) {
-		Map<String, ArrayList<Scan>> find = hashalgo2(scan);
+	public void algo2tocsv(Database scan, ArrayList<Scan> sample) {
+		Map<String, ArrayList<Scan>> find =scan.getHash_map();
 		Cordinate cor = new Cordinate();
 		for (int i = 0; i < sample.size(); i++) {
 			cor = algo2(find, sample.get(i));
@@ -160,7 +161,7 @@ public class Algoritem {
 		}
 		FileCsv fe = new FileCsv();
 		try {
-			fe.writecsv(sample, "C:\\Users\\yitzhak\\Desktop\\boaz\\test_for_algo_2_ts2_Table.csv");
+			fe.writecsv(sample, "resutlt_algo2.csv");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -249,4 +250,3 @@ public class Algoritem {
 	}
 
 }
-

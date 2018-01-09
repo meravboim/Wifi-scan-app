@@ -2,7 +2,7 @@ package object;
 import java.util.Comparator;
 
 public class WifiData  {
-	/**
+		/**
 	 * this object contain data of one wifi network.
 	 */
 	private String SSID;
@@ -103,6 +103,48 @@ public class WifiData  {
 	   return o1.getSignal().compareTo(o2.getSignal());
 
     }};
+
+
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Frequncy == null) ? 0 : Frequncy.hashCode());
+		result = prime * result + ((MAC == null) ? 0 : MAC.hashCode());
+		result = prime * result + ((SSID == null) ? 0 : SSID.hashCode());
+		result = prime * result + ((Signal == null) ? 0 : Signal.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		WifiData other = (WifiData) obj;
+		if (Frequncy == null) {
+			if (other.Frequncy != null)
+				return false;
+		} else if (!Frequncy.equals(other.Frequncy))
+			return false;
+		if (MAC == null) {
+			if (other.MAC != null)
+				return false;
+		} else if (!MAC.equals(other.MAC))
+			return false;
+		if (SSID == null) {
+			if (other.SSID != null)
+				return false;
+		} else if (!SSID.equals(other.SSID))
+			return false;
+		if (Signal == null) {
+			if (other.Signal != null)
+				return false;
+		} else if (!Signal.equals(other.Signal))
+			return false;
+		return true;
+	}
 
 
 }

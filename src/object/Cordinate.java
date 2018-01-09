@@ -1,6 +1,8 @@
 package object;
 
-public class Cordinate  {
+import java.io.Serializable;
+
+public class Cordinate implements Serializable  {
 	private double lat;
 	private double lon;
 	private double alt;
@@ -90,6 +92,40 @@ public  double distance(Cordinate x, Cordinate y) {
 	double lat = Math.pow(x.getLat()-y.getLat(), 2);
 	double dis = Math.sqrt(lon+lat);
 	return dis;
+}
+
+
+@Override
+public int hashCode() {
+	final int prime = 31;
+	int result = 1;
+	long temp;
+	temp = Double.doubleToLongBits(alt);
+	result = prime * result + (int) (temp ^ (temp >>> 32));
+	temp = Double.doubleToLongBits(lat);
+	result = prime * result + (int) (temp ^ (temp >>> 32));
+	temp = Double.doubleToLongBits(lon);
+	result = prime * result + (int) (temp ^ (temp >>> 32));
+	return result;
+}
+
+
+@Override
+public boolean equals(Object obj) {
+	if (this == obj)
+		return true;
+	if (obj == null)
+		return false;
+	if (getClass() != obj.getClass())
+		return false;
+	Cordinate other = (Cordinate) obj;
+	if (Double.doubleToLongBits(alt) != Double.doubleToLongBits(other.alt))
+		return false;
+	if (Double.doubleToLongBits(lat) != Double.doubleToLongBits(other.lat))
+		return false;
+	if (Double.doubleToLongBits(lon) != Double.doubleToLongBits(other.lon))
+		return false;
+	return true;
 }
 
 }

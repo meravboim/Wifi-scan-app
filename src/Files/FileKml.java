@@ -28,6 +28,7 @@ import de.micromata.opengis.kml.v_2_2_0.Placemark;
 import de.micromata.opengis.kml.v_2_2_0.Point;
 import de.micromata.opengis.kml.v_2_2_0.TimeStamp;
 import object.Cordinate;
+import object.Database;
 import object.Scan;
 import object.WifiData;
 
@@ -164,8 +165,8 @@ public class FileKml {
 					.withDescription("Wifi num: " + j + " Mac: " + arrayOfscan.get(i).getWifi().get(j).getMAC()
 							+ " Frequency: " + arrayOfscan.get(i).getWifi().get(j).getFrequncy() + " Signal: "
 							+ arrayOfscan.get(i).getWifi().get(j).getSignal())
-					.createAndSetPoint().addToCoordinates(arrayOfscan.get(i).getCore().getLat(),
-							arrayOfscan.get(i).getCore().getLon(), arrayOfscan.get(i).getCore().getAlt());
+					.createAndSetPoint().addToCoordinates(arrayOfscan.get(i).getCore().getLon(),
+							arrayOfscan.get(i).getCore().getLat(), arrayOfscan.get(i).getCore().getAlt());
 				}
 				catch (Exception e) {
 					// TODO: handle exception

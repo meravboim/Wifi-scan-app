@@ -1,9 +1,16 @@
+package test;
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import Files.FileKml;
+import object.Cordinate;
+import object.Scan;
+import object.WifiData;
 
 public class FileKmlTest {
 

@@ -1,6 +1,8 @@
+package object;
+
 import java.util.Comparator;
 import java.util.Date;
-
+ 
 public class MacData  extends WifiData { //implements Comparator<MacData> {
 	private Date time;
 	private Cordinate core;

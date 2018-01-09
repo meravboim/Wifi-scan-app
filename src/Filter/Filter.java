@@ -12,6 +12,7 @@ import java.util.function.Predicate;
 
 import Files.FileKml;
 import object.Cordinate;
+import object.Database;
 import object.Scan;
 
 
@@ -25,12 +26,10 @@ public class Filter extends FileKml {
 	/**
 	 * the method give the user to decide how to filter the data
 	 * (by Time range, or by Coordinate and  radius, or by Id )
-
- 
 	 * @param arryOfscan
 	 * @throws IOException
 	 */
-	public static int ChekFilterForKml(ArrayList<Scan> arryOfscan)  {
+	public static int ChekFilterForKml(Database arryOfscan)  {
 		FileKml fe = new FileKml();
 		ScanPredecate pe= new ScanPredecate();
 		Filter t = new Filter();
@@ -84,7 +83,7 @@ public class Filter extends FileKml {
 			min = stringToDate(MinTime+" "+MinClock);
 			max = stringToDate(MaxTime+" "+MaxClock);
 			System.out.println(min.toString());
-			fe.TurnToKML(oneMac(pe.filters(arryOfscan,pe.SelectByTime(min, max))), "KmlByTime1WithTimeLine.kml");
+			fe.TurnToKML(oneMac(pe.filters(arryOfscan.getDatabase(),pe.SelectByTime(min, max))), "KmlByTimeWithTimeLine.kml");
 		}
 		if (select == 2) {
 			System.out.println("Enter Radus, CenterLat and CenterLon");
@@ -94,14 +93,14 @@ public class Filter extends FileKml {
 			Cordinate cord=new Cordinate();
 			cord.setLon(centerLon);
 			cord.setLat(centerLat);
-			fe.TurnToKML(oneMac(pe.filters(arryOfscan,pe.SelectByPlace(radus, cord))),
-					"C:\\Users\\yitzhak\\eclipse-workspace\\OOP\\KmlByPlaceWithTimeLine.kml");
+			fe.TurnToKML(oneMac(pe.filters(arryOfscan.getDatabase(),pe.SelectByPlace(radus, cord))),
+					"KmlByPlaceWithTimeLine.kml");
 
 		}
 		if (select == 3) {
 			System.out.println("Enter Id");
 			String id = sc.next();
-			fe.TurnToKML(oneMac(pe.filters(arryOfscan, pe.SelectById(id))), "KmlByIdWithTimeLine.kml");
+			fe.TurnToKML(oneMac(pe.filters(arryOfscan.getDatabase(), pe.SelectById(id))), "KmlByIdWithTimeLine.kml");
 
 		}
 

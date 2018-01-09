@@ -1,6 +1,11 @@
+package test;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import object.Cordinate;
+import object.Pi;
 
 public class PiTest {
 
@@ -24,7 +29,7 @@ public class PiTest {
 		Cordinate core = new Cordinate(1,2,3);
 		Pi pl = new Pi(core,0.5);
 		Pi p = new Pi(pl);
-		if(p.getPi()!=0.5 || p.getLat()!=1 || p.getLon()!=2 || p.getAlt()!=3)
+		if(p.getPi()!=0.5&& p.getLat()!=1 && p.getLon()!=2 && p.getAlt()!=3)
 		  fail("there is a problen with the copy constractur");
 	}
 

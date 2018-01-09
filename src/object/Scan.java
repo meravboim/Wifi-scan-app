@@ -169,12 +169,51 @@ public class Scan {//implements Comparator<Scan> {
 				time += Date[2] + "/" + Date[1] + "/" + Date[0] + " " + Time[1];
 			return time;
 		}
-		public int equals (Scan other) {
-			if(this.getTime().equals(other.getTime()) && this.getId().equals(other.getId()) && this.core.equal(this.core, other.core)
-					&& this.getWifiNetWork() == other.getWifiNetWork() && this.wifi.equals(other.wifi))
-				return 1;
-			else return 0;
 
+		@Override
+		public int hashCode() {
+			final int prime = 31;
+			int result = 1;
+			result = prime * result + ((core == null) ? 0 : core.hashCode());
+			result = prime * result + ((id == null) ? 0 : id.hashCode());
+			result = prime * result + ((time == null) ? 0 : time.hashCode());
+			result = prime * result + ((wifi == null) ? 0 : wifi.hashCode());
+			result = prime * result + wifiNetWork;
+			return result;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Scan other = (Scan) obj;
+			if (core == null) {
+				if (other.core != null)
+					return false;
+			} else if (!core.equals(other.core))
+				return false;
+			if (id == null) {
+				if (other.id != null)
+					return false;
+			} else if (!id.equals(other.id))
+				return false;
+			if (time == null) {
+				if (other.time != null)
+					return false;
+			} else if (!time.equals(other.time))
+				return false;
+			if (wifi == null) {
+				if (other.wifi != null)
+					return false;
+			} else if (!wifi.equals(other.wifi))
+				return false;
+			if (wifiNetWork != other.wifiNetWork)
+				return false;
+			return true;
 		}
 
 

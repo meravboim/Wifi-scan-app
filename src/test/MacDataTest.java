@@ -1,8 +1,14 @@
+package test;
+
 import static org.junit.Assert.*;
 
 import java.util.Date;
 
 import org.junit.Test;
+
+import object.Cordinate;
+import object.MacData;
+import object.WifiData;
 
 public class MacDataTest {
 

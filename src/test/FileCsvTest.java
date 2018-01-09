@@ -1,3 +1,5 @@
+package test;
+
 import static org.junit.Assert.*;
 
 import java.io.IOException;
@@ -5,7 +7,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import Files.FileCsv;
+import Files.FileKml;
 import de.micromata.opengis.kml.v_2_2_0.Kml;
+import object.AllData;
+import object.Cordinate;
+import object.Database;
+import object.Scan;
+import object.WifiData;
 
 public class FileCsvTest {
 
@@ -43,9 +52,7 @@ public class FileCsvTest {
 	@Test
 	public void testReadForCsv() {
 		FileCsv f = new FileCsv();
-	
-			if(f.readForCsv("C:\\Users\\yitzhak\\Desktop\\Simple_1").size()>0){}
-			else
+			if(f.readForCsv("database").getDatabase().size()==0)
 			 fail("there is problem with the method readForCsv");
 
 			// TODO Auto-generated catch block
@@ -70,7 +77,7 @@ public class FileCsvTest {
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  13:07:00","11","-56","32.10432895","35.20499025","688.1184747","16","WIFI"));
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:07:00","11","-56","32.10432895","8.20499025","688.1184747","16","WIFI"));
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:07:00","11","-56","32.10432895","8.20499025","688.1184747","16","WIFI"));
-			if(f.sotrByScan(num).size()>0){}
+			if(f.sotrByScan(num).getDatabase().size()>0){}
 			else
 			 fail("there is problem with the method sotrByScan");
 
@@ -80,7 +87,7 @@ public class FileCsvTest {
 	@Test
 	public void testSortAndWrite() {
 		FileCsv f = new  FileCsv();
-		ArrayList<Scan>num2=new ArrayList<Scan>();
+		Database t = new Database (); 
 		ArrayList<AllData>num=new ArrayList<AllData>();
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:07:00","11","-56","32.10432895","34.20499025","688.1184747","16","WIFI"));
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:09:00","11","-56","32.10432895","35.20499025","688.1184747","16","WIFI"));
@@ -89,8 +96,7 @@ public class FileCsvTest {
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:07:00","11","-56","32.10432895","8.20499025","688.1184747","16","WIFI"));
 		num.add( new AllData("NRD90M.G920FXXU5EQD3","24:c9:a1:33:34:68","Ariel_University","[ESS]", "26/10/2017  14:07:00","11","-56","32.10432895","8.20499025","688.1184747","16","WIFI"));
 		
-			if(f.SortAndWrite(0, 4, num, num2).size()>0){}
-			else
+			if(f.SortAndWrite(0, 4, num, t).getDatabase().size()<1)
 			 fail("there is problem with the method SortAndWrite");
 	}
 
@@ -168,10 +174,11 @@ public class FileCsvTest {
 		num.add(temp);
 		num.add(temp);
 		num.add(temp);
-		e.writecsv(num, "C:\\Users\\yitzhak\\Desktop\\Simple_1\\test.csv");
-		ArrayList<Scan> km=l.readFromCsv("C:\\Users\\yitzhak\\Desktop\\Simple_1\\test.csv");
+		System.out.println(num.size());
+		e.writecsv(num, "C:\\Users\\yitzhak\\Desktop\\test.csv");
+		ArrayList<Scan> km=l.readFromCsv("C:\\Users\\yitzhak\\Desktop\\test.csv");
 		for (int i = 0; i < km.size(); i++) {
-			if(num.get(i).equals(km.get(i))!=1) {
+			if(!num.get(i).equals(km.get(i))) {
 				 fail("there is problem with the method writecsv");
 
 			}
