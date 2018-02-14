@@ -1,17 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="Files.FileCsv" project="oop_matala" file="/oop_matala/src/Files/FileCsv.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="376" width="376" x="95" y="7"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="Files.FileKml" project="oop_matala" file="/oop_matala/src/Files/FileKml.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
+  <class id="1" language="java" name="Files.FileKml" project="project_sql" 
+    file="/project_sql/src/main/java/Files/FileKml.java" binary="false" corner="BOTTOM_RIGHT">    
     <position height="286" width="253" x="511" y="7"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      

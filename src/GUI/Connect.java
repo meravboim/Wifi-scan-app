@@ -14,6 +14,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.WatchKey;
 import java.nio.file.WatchService;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +27,7 @@ import java.util.concurrent.TimeUnit;
 import Algoritem.Algoritem;
 import Files.FileCsv;
 import Files.FileKml;
+import Files.ReadFromSQL;
 import Files.Write_filter;
 import Filter.ChooseFilter;
 import Filter.Filter;
@@ -44,10 +47,11 @@ public class Connect {
 	Database prev;
 	ArrayList<String> csv_paths;
 	ArrayList<String> folder_paths;
-
-public Database GETprev_databacs() {
-	return this.prev;
-}
+	ArrayList<ReadFromSQL> sql_paths;
+	boolean flag=false;
+	public Database GETprev_databacs() {
+		return this.prev;
+	}
 	public Database getData() {
 		return data;
 	}
@@ -58,22 +62,27 @@ public Database GETprev_databacs() {
 	public void prevSetData(Database other) {
 		this.prev.setDatabase(other.getDatabase());
 	}
-/**
- * counstractor
- */
+	/**
+	 * counstractor
+	 */
 	public Connect() {
 		this.data = new Database();
 		this.csv_paths = new ArrayList<>();
 		this.folder_paths = new ArrayList<>();
 		this.prev= new Database();
-
+		this.sql_paths=new ArrayList<>();
+	}
+	public void insertJDBS (ReadFromSQL m) {
+		this.sql_paths.add(m);
+		this.data.addArrayList(m.test_ex4_db());
+		follow_sql(m);
 	}
 	
 	public void write (Filters f) throws IOException {
 		Write_filter t= new Write_filter();
 		t.WriteFilter(f);
 	}
-	
+
 	public Filters read () {
 		Write_filter t= new Write_filter();
 		Filters f=null;
@@ -87,12 +96,12 @@ public Database GETprev_databacs() {
 			e.printStackTrace();
 		}
 		return f;
-			
+
 	}
-/**
- * function that follow change on files 
- * @param path
- */
+	/**
+	 * function that follow change on files 
+	 * @param path
+	 */
 	public void folow_csv(String path) {
 		this.csv_paths.add(path);
 		new Thread(new Runnable() {
@@ -105,10 +114,26 @@ public Database GETprev_databacs() {
 		}).start();
 
 	}
-/**
- * the  shell function check change in the folder
- * @param path
- */
+	
+	public void follow_sql(ReadFromSQL m) {
+		System.out.println("enter folow sql");
+		new Thread(new Runnable() {
+			@Override
+			public void run() {
+				System.out.println("enter run folow folder");
+				checkForChange(m);
+
+			}
+
+		}).start();
+
+	}
+
+
+	/**
+	 * the  shell function check change in the folder
+	 * @param path
+	 */
 	public void folow_folder(String path) {
 		System.out.println("enter folow folder");
 		this.folder_paths.add(path);
@@ -128,11 +153,11 @@ public Database GETprev_databacs() {
 		}).start();
 
 	}
-/**
- * the function contians pool tread that follow the folder
- * @param data
- * @throws IOException
- */
+	/**
+	 * the function contians pool tread that follow the folder
+	 * @param data
+	 * @throws IOException
+	 */
 	// https://github.com/yuvalmizrahi2/Task1/blob/master/src/wraper/Listener.java
 	// https://github.com/ruckc/filewatcher/blob/master/src/main/java/io/ruck/filewatcher/Watcher.java
 	public void changeFolder(Database data) throws IOException {
@@ -140,7 +165,6 @@ public Database GETprev_databacs() {
 		ExecutorService servise = Executors.newCachedThreadPool();
 		final FileSystem fs = FileSystems.getDefault();
 		final WatchService watcher = fs.newWatchService();
-		;
 		int size = folder_paths.size();
 		System.out.println("size of the csv_path " + size);
 		Map<WatchKey, String> keys = new HashMap<>();
@@ -177,7 +201,7 @@ public Database GETprev_databacs() {
 					// if there is a change then the watchkey is change
 					if (t != null) {
 						System.out.println("change");
-						database(data); // restart to the database
+						database(); // restart to the database
 						System.out.println("data size  in the function" + data.getDatabase().size());
 						servise.shutdownNow();
 						Thread.currentThread().interrupt();
@@ -231,14 +255,14 @@ public Database GETprev_databacs() {
 				while (Thread.currentThread().isInterrupted() == false) {
 					for (int i = 0; i < lastmodify.size(); i++) {
 						if (lastmodify.get(i) != new File(csv_paths.get(i)).lastModified()) {
-							database(data);
+							database();
 							servise.shutdownNow();
 							Thread.currentThread().interrupt();
 							changeFiles();
 						}
 					}
 					if (size != csv_paths.size()) {
-						database(data);
+						database();
 						servise.shutdownNow();
 						Thread.currentThread().interrupt();
 						changeFiles();
@@ -249,10 +273,10 @@ public Database GETprev_databacs() {
 		});
 
 	}
-/**
- * the function enter the wigle-wifi files from folder to the database
- * @param path
- */
+	/**
+	 * the function enter the wigle-wifi files from folder to the database
+	 * @param path
+	 */
 	public void enterdatabase(String path) {
 		Thread t = new Thread(new Runnable() {
 			@Override
@@ -270,10 +294,10 @@ public Database GETprev_databacs() {
 		t.start();
 		// return this.data;
 	}
-/**
- * The function enter the Table.csv files  to the database
- * @param path
- */
+	/**
+	 * The function enter the Table.csv files  to the database
+	 * @param path
+	 */
 	public void readCSv(String path) {
 		if (!path.substring(path.length() - 3, path.length()).equals("csv"))
 			path = path + ".csv";
@@ -293,11 +317,11 @@ public Database GETprev_databacs() {
 
 	}
 
-/**
- * the function call to Algo1 methods
- * @param mac
- * @return
- */
+	/**
+	 * the function call to Algo1 methods
+	 * @param mac
+	 * @return
+	 */
 	public Cordinate algoritem1(String mac) {
 
 		Algoritem l = new Algoritem();
@@ -305,35 +329,35 @@ public Database GETprev_databacs() {
 		Cordinate cor = new Cordinate(l.algo1(map, mac));
 		return cor;
 	}
-/**
- * the function call to Algo 2 methods
- * @param path
- */
+	/**
+	 * the function call to Algo 2 methods
+	 * @param path
+	 */
 	public void algoritem2a(String path) {
 		Algoritem l = new Algoritem();
 		FileKml s = new FileKml();
 		l.algo2tocsv(this.data, s.readFromCsv(path));
 	}
-/**
- * the function call to the Algo2 method that get 3 macs and signal
- * @param mac1
- * @param mac2
- * @param mac3
- * @param sig1
- * @param sig2
- * @param sig3
- * @return
- */
+	/**
+	 * the function call to the Algo2 method that get 3 macs and signal
+	 * @param mac1
+	 * @param mac2
+	 * @param mac3
+	 * @param sig1
+	 * @param sig2
+	 * @param sig3
+	 * @return
+	 */
 	public Cordinate algoritem2b(String mac1, String mac2, String mac3, String sig1, String sig2, String sig3) {
 		Algoritem l = new Algoritem();
 		Cordinate cor = new Cordinate(l.algo2fromUser(this.data, mac1, mac2, mac3, sig1, sig2, sig3));
 		return cor;
 	}
-/**
- * check input for the macs
- * @param mac
- * @return
- */
+	/**
+	 * check input for the macs
+	 * @param mac
+	 * @return
+	 */
 	public boolean check_user_macs(String mac) {
 		String[] checkmac = mac.split(":");
 		boolean flag = true;
@@ -350,11 +374,11 @@ public Database GETprev_databacs() {
 		} else
 			return false;
 	}
-/**
- * check input to the signal
- * @param sig
- * @return
- */
+	/**
+	 * check input to the signal
+	 * @param sig
+	 * @return
+	 */
 	public boolean check_user_Signal(String sig) {
 
 		String k = sig.substring(1, sig.length());
@@ -368,10 +392,10 @@ public Database GETprev_databacs() {
 		return true;
 
 	}
-/**
- * the function clear database
- * @return
- */
+	/**
+	 * the function clear database
+	 * @return
+	 */
 	public Database clear() {
 		this.data.getDatabase().clear();
 		this.data.getHash_map().clear();
@@ -410,13 +434,13 @@ public Database GETprev_databacs() {
 			k.TurnToKML(this.data.getDatabase(), name);
 		}
 	}
-	
-/**
- * the function do !filter by time
- * @param min
- * @param max
- * @return
- */
+
+	/**
+	 * the function do !filter by time
+	 * @param min
+	 * @param max
+	 * @return
+	 */
 
 	public Filters notfiltertime(String min, String max) {
 		Filters time = new FilterByTime(min, max);
@@ -445,32 +469,32 @@ public Database GETprev_databacs() {
 		Filters place = new FilterByPlace(cor, rad);
 		return place;
 	}
-/**
- * the function do !filter by place
- * @param cor
- * @param rad
- * @return
- */
+	/**
+	 * the function do !filter by place
+	 * @param cor
+	 * @param rad
+	 * @return
+	 */
 	public Filters notfilterplace(Cordinate cor, double rad) {
 		Filters place = new FilterByPlace(cor, rad);
 		Filters id2 = new NotFilter(place);
 		return id2;
 	}
 
-/**
- * the function do filter by id
- * @param id
- * @return
- */
+	/**
+	 * the function do filter by id
+	 * @param id
+	 * @return
+	 */
 	public Filters filterId(String id) {
 		Filters id1 = new FilterByID(id);
 		return id1;
 	}
-/**
- * the function do !filter by id
- * @param id
- * @return
- */
+	/**
+	 * the function do !filter by id
+	 * @param id
+	 * @return
+	 */
 	public Filters NOtfilterId(String id) {
 		Filters id1 = new FilterByID(id);
 		Filters id2 = new NotFilter(id1);
@@ -481,7 +505,7 @@ public Database GETprev_databacs() {
 	 * @param data
 	 */
 
-	public void database(Database data) {
+	public  void database() {
 		System.out.println("restart database");
 		this.data.cleardatabase();
 		for (int i = 0; i < this.folder_paths.size(); i++) {
@@ -490,7 +514,43 @@ public Database GETprev_databacs() {
 		for (int i = 0; i < this.csv_paths.size(); i++) {
 			readCSv(this.csv_paths.get(i));
 		}
+			for (int i = 0; i < this.sql_paths.size(); i++) {
+				data.addArrayList(sql_paths.get(i).test_ex4_db());
+			}
+		
 		System.out.println("data     size " + data.numOfScan());
 		System.out.println("data size " + data.getDatabase().size());
+	}
+
+	
+	
+	public void checkForChange (ReadFromSQL a) {
+		//ArrayList<Scan> data = new ArrayList<>();
+		Thread t = new Thread(new Runnable() {
+			Statement st ;
+			int rs ;
+			public void run() {
+				// TODO Auto-generated method stub
+
+				try { 
+					while(true) {
+						a.set_con( DriverManager.getConnection(a.get_url(), a.get_user(), a.get_password()));
+						st = a.get_con().createStatement();
+						rs = st.executeUpdate("\"SELECT UPDATE_TIME FROM information_schema.tables WHERE TABLE_SCHEMA = 'oop_course_ariel' AND TABLE_NAME = 'ex4_db'\"); ");
+						if (rs!=0) {
+							database();
+							Thread.interrupted();
+							follow_sql(a);
+						}
+						Thread.sleep(2000);
+					}
+				}
+				catch (Exception e) {
+					// TODO: handle exception
+				}
+
+			}
+		}); t.start();
+
 	}
 }

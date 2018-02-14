@@ -37,6 +37,9 @@ public class Main {
 		//r.ChekFilterForKml(data);
 		System.out.println("size befor filter "+data.getDatabase().size());
 		Filters f1 = new FilterByID("OnePlus3T");
+		System.out.println(f1.toString());
+		Cordinate t = new Cordinate(32,34,0);
+		Filters f3= new FilterByPlace(t,30);
 		Filters f2 = new FilterByID("dreamlte");
 		Filters fi = new OrFilter(f1,f2);
 		Makefilter tt = new Makefilter(fi);
